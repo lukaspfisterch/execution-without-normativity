@@ -5,8 +5,8 @@ We formalize the separation between observation and deterministic projection. Le
 \paragraph{Definition.}
 For execution streams $V$ and $V'$, we write $V \sim_O V'$ if they contain the same ordered sequence of events and differ only in observation artifacts. A projection $\pi$ is observation-free if $V \sim_O V'$ implies $\pi(V) = \pi(V')$.
 
-\paragraph{Claim.}
+\paragraph{Lemma.}
 Under A4 and A5, the canonical projection $\pi$ is observation-free. Therefore, changing observations does not change deterministic projections.
 
-\paragraph{Implication.}
+\paragraph{Corollary.}
 Observation does not interfere with deterministic reconstruction. Observations can be recorded, but they do not define or alter the deterministic structure of execution.
