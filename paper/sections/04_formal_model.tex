@@ -1,0 +1,15 @@
+\section{Formal Model}
+
+We introduce a minimal formal model based on atomic events and an append-only execution stream.
+
+\paragraph{Atomic events.}
+Let $\Delta$ denote the set of atomic execution events. An event is a minimal unit of execution and may carry an observation payload.
+
+\paragraph{Execution stream.}
+Let $V = \langle e_0, e_1, \ldots \rangle$ be an append-only stream of events. Each event $e_i \in \Delta$ has a position index $t(e_i) = i$. The ordering defined by $t$ is the only execution order used in the model.
+
+\paragraph{Observations.}
+Let $O$ denote the set of observation artifacts associated with events. Observations are attached to events but are not inputs to deterministic projections.
+
+\paragraph{Canonical projection.}
+A canonical projection is a function $\pi$ that maps an execution stream to a deterministic representation, written $\pi(V)$. The projection must depend only on the ordered sequence of events and on fixed authoritative execution inputs. Observations are excluded from $\pi$ by definition.

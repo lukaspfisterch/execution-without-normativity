@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black}
+
+\title{Execution Without Normativity\\\large A Minimal Theory of Deterministic Execution and Observation}
+\author{Lukas Pfister}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper presents a minimal axiomatic theory of deterministic execution and observation. The theory isolates execution structure from any notion of meaning, policy, or governance. It models atomic execution events, an append-only ordered execution stream, and observations that are explicitly non-derivational. The core guarantees are structural determinism of canonical projections, observational non-interference, and replay equivalence under fixed authoritative execution inputs. The theory does not address correctness, semantics, or domain-specific interpretations.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_scope_non_goals}
+\input{sections/03_conceptual_foundations}
+\input{sections/04_formal_model}
+\input{sections/05_axioms}
+\input{sections/06_observational_non_interference}
+\input{sections/07_replay_equivalence}
+\input{sections/08_implications}
+\input{sections/09_limitations}
+\input{sections/10_conclusion}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

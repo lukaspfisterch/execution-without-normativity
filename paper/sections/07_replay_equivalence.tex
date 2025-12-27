@@ -1,0 +1,12 @@
+\section{Replay Equivalence}
+
+Replay is defined as reconstruction of the canonical projection from the execution stream alone.
+
+\paragraph{Replay procedure.}
+Given $V = \langle e_0, e_1, \ldots \rangle$, replay applies the projection $\pi$ to the ordered stream, yielding $\pi(V)$. The procedure is deterministic under A2 and A5.
+
+\paragraph{Equivalence.}
+Two executions are replay-equivalent if they produce the same canonical projection. Formally, $V \equiv_R V'$ iff $\pi(V) = \pi(V')$. Under A2 through A5, any two executions with identical ordered event sequences are replay-equivalent, regardless of observation artifacts.
+
+\paragraph{Consequence.}
+Replay equivalence defines an execution class that ignores observation and depends only on ordered event structure and fixed authoritative execution inputs.

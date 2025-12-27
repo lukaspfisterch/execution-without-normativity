@@ -1,0 +1,18 @@
+\section{Axioms}
+
+We state five axioms that characterize deterministic execution and observational separation.
+
+\paragraph{A1 Atomicity of $\Delta$.}
+Execution is composed of atomic events. No event can be partially applied or split into smaller execution units for the purposes of ordering or replay.
+
+\paragraph{A2 Append-only ordered stream $V$.}
+The execution stream $V$ is append-only and totally ordered by the index $t(e)$. Events are immutable once appended.
+
+\paragraph{A3 Order is independent of wall clock time.}
+The order induced by $t$ is defined by stream position only. Wall clock time is observational and does not affect order.
+
+\paragraph{A4 Observations are non-derivational.}
+Observations are attached to events but must not affect any deterministic projection $\pi(V)$. Changes in observations alone cannot change $\pi(V)$.
+
+\paragraph{A5 Structural determinism of projections.}
+For fixed authoritative execution inputs, the canonical projection $\pi(V)$ is deterministic and invariant under execution replay. Authoritative execution inputs are those required to identify and order events in $V$ and to evaluate $\pi$; observational artifacts are excluded.
