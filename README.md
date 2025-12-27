@@ -1,3 +1,10 @@
+This repository contains a formal specification.
+
+If you are looking for an overview or motivation, start here:
+→ https://github.com/lukaspfisterch/deterministic-boundary-layer
+
+If you are looking for axioms and proofs, continue below.
+
 # Execution Without Normativity
 
 Execution Without Normativity is a minimal axiomatic theory of deterministic execution and observation. It defines atomic execution events, an append-only ordered execution stream, and a strict separation between deterministic projections and observational artifacts. The model is intentionally non-normative and avoids governance, policy, or domain semantics.
@@ -18,7 +25,7 @@ This README is descriptive only.
 latexmk -pdf -interaction=nonstopmode -halt-on-error paper/main.tex
 ```
 
-**Authoritative paper (PDF):**
+**Authoritative specification (PDF):**
 - [Execution Without Normativity – v1.0 (PDF)](paper/main.pdf)
 
 ## Scope and non-goals
