@@ -32,5 +32,4 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error paper/main.tex
 - paper/sections/
 - paper/refs.bib
 - paper/latexmkrc
-- notes/roadmap.md
 - .github/workflows/build-paper.yml
