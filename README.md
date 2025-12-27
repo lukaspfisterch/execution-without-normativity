@@ -18,6 +18,9 @@ This README is descriptive only.
 latexmk -pdf -interaction=nonstopmode -halt-on-error paper/main.tex
 ```
 
+**Authoritative paper (PDF):**
+- [Execution Without Normativity – v1.0 (PDF)](paper/main.pdf)
+
 ## Scope and non-goals
 
 - no governance, policy, or decision logic
