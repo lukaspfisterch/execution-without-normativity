@@ -2,14 +2,26 @@
 
 We introduce a minimal formal model based on atomic events and an append-only execution stream.
 
-\paragraph{Atomic events.}
+\paragraph{Definition 4.1 (Atomic events).}
 Let $\Delta$ denote the set of atomic execution events. An event is a minimal unit of execution and may carry an observation payload.
 
-\paragraph{Execution stream.}
+\paragraph{Definition 4.2 (Execution stream).}
 Let $V = \langle e_0, e_1, \ldots \rangle$ be an append-only stream of events. Each event $e_i \in \Delta$ has a position index $t(e_i) = i$. The ordering defined by $t$ is the only execution order used in the model.
 
-\paragraph{Observations.}
+\paragraph{Definition 4.3 (Observation artifacts).}
 Let $O$ denote the set of observation artifacts associated with events. Observations are attached to events but are not inputs to deterministic projections.
 
-\paragraph{Canonical projection.}
-A canonical projection is a function $\pi$ that maps an execution stream to a deterministic representation, written $\pi(V)$. The projection must depend only on the ordered sequence of events and on fixed authoritative execution inputs. Observations are excluded from $\pi$ by definition.
+\paragraph{Definition 4.4 (Authoritative execution inputs).}
+Let $I_{\text{exec}}$ denote the authoritative execution inputs required to identify and order events in $V$ and to evaluate the canonical projection. By definition, $I_{\text{exec}}$ excludes observation artifacts. It may include event identifiers and structural metadata needed to interpret event order, but it does not include outputs, traces, timing data, errors, or metrics.
+
+\paragraph{Definition 4.5 (Canonical projection).}
+A canonical projection is a function $\pi$ that maps an execution stream to a deterministic representation, written $\pi(V; I_{\text{exec}})$. The projection must depend only on the ordered sequence of events and on fixed authoritative execution inputs. Observations are excluded from $\pi$ by definition.
+
+\paragraph{Properties of $\pi$.}
+The canonical projection satisfies the following minimal properties.
+\begin{itemize}
+  \item \textbf{Well-defined.} For fixed $V$ and fixed $I_{\text{exec}}$, the value $\pi(V; I_{\text{exec}})$ is unique.
+  \item \textbf{Order-respecting.} If two streams differ only by event order, their projections may differ. Order is the only temporal input.
+  \item \textbf{Observation-free.} Changing observation artifacts alone does not change $\pi(V; I_{\text{exec}})$.
+  \item \textbf{Effective.} There exists a finite procedure that computes $\pi(V; I_{\text{exec}})$ from its inputs.
+\end{itemize}

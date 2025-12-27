@@ -6,7 +6,11 @@ Execution Without Normativity is a minimal axiomatic theory of deterministic exe
 
 This paper defines a minimal execution substrate.
 It is intentionally non-normative.
-Governed architectures can be built on top of it, but are out of scope.
+Governed or normative architectures may build on this model,
+but such layers are explicitly out of scope here.
+
+The paper (PDF) is the authoritative specification.
+This README is descriptive only.
 
 ## Build
 

@@ -2,11 +2,23 @@
 
 We formalize the separation between observation and deterministic projection. Let $V$ be an execution stream and let $O$ be the set of observations attached to events. Two executions are observation-equivalent if they have identical ordered event sequences and differ only in observations.
 
-\paragraph{Definition.}
-For execution streams $V$ and $V'$, we write $V \sim_O V'$ if they contain the same ordered sequence of events and differ only in observation artifacts. A projection $\pi$ is observation-free if $V \sim_O V'$ implies $\pi(V) = \pi(V')$.
+\paragraph{Definition 6.1 (Observation-equivalence).}
+For execution streams $V$ and $V'$, we write $V \sim_O V'$ if they contain the same ordered sequence of events and differ only in observation artifacts. For fixed $I_{\text{exec}}$, a projection $\pi$ is observation-free if $V \sim_O V'$ implies $\pi(V; I_{\text{exec}}) = \pi(V'; I_{\text{exec}})$. This aligns with classical noninterference formulations in which observations do not influence permitted derivations \cite{goguen1982security,rushby1992noninterference}.
 
-\paragraph{Lemma.}
-Under A4 and A5, the canonical projection $\pi$ is observation-free. Therefore, changing observations does not change deterministic projections.
+\paragraph{Lemma 6.2 (No observational expansion of $I_{\text{exec}}$).}
+Observational changes cannot extend the authoritative execution input domain used by $\pi$. If $V \sim_O V'$, then the admissible authoritative inputs $I_{\text{exec}}$ for evaluating $\pi$ are identical for $V$ and $V'$. This follows from the definition of $I_{\text{exec}}$ and A4, which excludes observational artifacts from deterministic projections.
+
+\paragraph{Lemma 6.3 (Observation-free projection).}
+Under A4 and A5, the canonical projection $\pi$ is observation-free. Therefore, changing observations does not change deterministic projections for fixed $I_{\text{exec}}$.
+
+\paragraph{Theorem 6.4 (Observational non-interference).}
+For all execution streams $V$ and $V'$ and for fixed $I_{\text{exec}}$, if $V \sim_O V'$, then $\pi(V; I_{\text{exec}}) = \pi(V'; I_{\text{exec}})$.
+
+\paragraph{Proof sketch.}
+By Lemma 6.2, observation changes do not alter the admissible authoritative inputs $I_{\text{exec}}$ used by $\pi$. By A4, observations are excluded from the domain of deterministic projections. Therefore $\pi$ depends only on event order and $I_{\text{exec}}$, which are identical under $V \sim_O V'$. Lemma 6.3 then yields $\pi(V; I_{\text{exec}}) = \pi(V'; I_{\text{exec}})$.
+
+\paragraph{Example.}
+Consider two executions with the same ordered events but different observation payloads attached to those events. Under $V \sim_O V'$, the observation changes do not enter $I_{\text{exec}}$ and therefore do not change $\pi$. The deterministic projection is identical in both executions.
 
 \paragraph{Corollary.}
 Observation does not interfere with deterministic reconstruction. Observations can be recorded, but they do not define or alter the deterministic structure of execution.

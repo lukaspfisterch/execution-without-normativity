@@ -2,11 +2,20 @@
 
 Replay is defined as reconstruction of the canonical projection from the execution stream alone.
 
-\paragraph{Replay procedure.}
-Given $V = \langle e_0, e_1, \ldots \rangle$, replay applies the projection $\pi$ to the ordered stream, yielding $\pi(V)$. The procedure is deterministic under A2 and A5.
+\paragraph{Definition 7.1 (Replay procedure).}
+Given $V = \langle e_0, e_1, \ldots \rangle$, replay applies the projection $\pi$ to the ordered stream, yielding $\pi(V; I_{\text{exec}})$. The procedure is deterministic under A2 and A5 and corresponds to state reconstruction from an ordered event trace \cite{lamport2002specifying}.
 
-\paragraph{Equivalence.}
-Two executions are replay-equivalent if they produce the same canonical projection. Formally, $V \equiv_R V'$ iff $\pi(V) = \pi(V')$. Under A2 through A5, any two executions with identical ordered event sequences are replay-equivalent, regardless of observation artifacts.
+\paragraph{Definition 7.2 (Replay equivalence).}
+Two executions are replay-equivalent if they produce the same canonical projection. Formally, $V \equiv_R V'$ iff $\pi(V; I_{\text{exec}}) = \pi(V'; I_{\text{exec}})$. Under A2 through A5, any two executions with identical ordered event sequences are replay-equivalent, regardless of observation artifacts.
+
+\paragraph{Lemma 7.3 (Deterministic replay).}
+For fixed $I_{\text{exec}}$, replay of a stream $V$ yields a unique projection $\pi(V; I_{\text{exec}})$. This follows from A2 and A5, which fix order and exclude observational variation from the projection.
+
+\paragraph{Theorem 7.4 (Replay equivalence under fixed $I_{\text{exec}}$).}
+If two executions have identical ordered event sequences and fixed $I_{\text{exec}}$, then they are replay-equivalent.
+
+\paragraph{Proof sketch.}
+Let $V$ and $V'$ be two executions with identical ordered event sequences. By A2, the order is fixed by position and by A5 the projection depends only on this order and $I_{\text{exec}}$. By Lemma 7.3, replay of each stream yields a unique projection, and the identical ordered structure implies the same projection. Therefore $\pi(V; I_{\text{exec}}) = \pi(V'; I_{\text{exec}})$ and $V \equiv_R V'$.
 
 \paragraph{Consequence.}
-Replay equivalence defines an execution class that ignores observation and depends only on ordered event structure and fixed authoritative execution inputs.
+Replay equivalence defines an execution class that ignores observation and depends only on ordered event structure and fixed authoritative execution inputs $I_{\text{exec}}$.
