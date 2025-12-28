@@ -1,13 +1,8 @@
 cff-version: 1.2.0
-title: "Execution Without Normativity: A Minimal Theory of Deterministic Execution and Observation"
-type: report
+title: "Execution Without Normativity"
 authors:
   - family-names: Pfister
     given-names: Lukas
-version: "1.0"
-date-released: "2025-12-27"
-license: MIT
+version: 1.0
+date-released: 2025-12-27
 url: "https://github.com/lukaspfisterch/execution-without-normativity"
-abstract: >
-  A minimal axiomatic theory of deterministic execution and observation that separates execution
-  structure from normativity and excludes observational artifacts from deterministic projections.
