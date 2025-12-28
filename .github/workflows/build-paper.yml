@@ -9,18 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install TeX Live
-        uses: xu-cheng/texlive-action@v2
-        with:
-          packages: >-
-            latexmk
-            scheme-small
+      - uses: actions/checkout@v4
 
       - name: Build PDF
-        run: latexmk -pdf -interaction=nonstopmode -halt-on-error paper/main.tex
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: paper
+          root_file: main.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
