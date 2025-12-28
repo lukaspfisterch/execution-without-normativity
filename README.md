@@ -36,7 +36,7 @@ This README is descriptive only.
 ## Authoritative specification
 
 - **Execution Without Normativity – v1.0 (PDF)**  
-  `paper/main.pdf`
+  [paper/main.pdf](paper/main.pdf)
 
 ---
 
