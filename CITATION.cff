@@ -4,11 +4,10 @@ type: report
 authors:
   - family-names: Pfister
     given-names: Lukas
-version: 1.0
-date-released: 2025-12-27
+version: "1.0"
+date-released: "2025-12-27"
 license: MIT
-repository-code: "https://github.com/lukaspfisterch/execution-without-normativity"
+url: "https://github.com/lukaspfisterch/execution-without-normativity"
 abstract: >
-  A minimal axiomatic theory of deterministic execution and observation that
-  separates execution structure from normativity and excludes observational
-  artifacts from deterministic projections.
+  A minimal axiomatic theory of deterministic execution and observation that separates execution
+  structure from normativity and excludes observational artifacts from deterministic projections.
