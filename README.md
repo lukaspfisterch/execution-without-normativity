@@ -1,12 +1,14 @@
 # Execution Without Normativity
 
+[![build-paper](https://github.com/lukaspfisterch/execution-without-normativity/actions/workflows/build-paper.yml/badge.svg)](https://github.com/lukaspfisterch/execution-without-normativity/actions/workflows/build-paper.yml)
+
 A foundational paper about the most minimal mechanics of execution.
 
 This repository describes **what it means for something to be executed at all**,
 before questions of meaning, correctness, policy, or governance are introduced.
 
 If you are looking for an architectural overview or motivation, start here:  
-→ https://github.com/lukaspfisterch/deterministic-boundary-layer
+https://github.com/lukaspfisterch/deterministic-boundary-layer
 
 If you are looking for axioms and proofs, continue below.
 
@@ -137,3 +139,4 @@ This work explicitly does not address:
 - paper/refs.bib
 - paper/latexmkrc
 - .github/workflows/build-paper.yml
+
