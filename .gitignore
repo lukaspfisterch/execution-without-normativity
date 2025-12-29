@@ -19,3 +19,4 @@ __pycache__/
 
 # Repo-specific
 INVENTORY.md
+paper/*.pdf
