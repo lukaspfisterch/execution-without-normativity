@@ -1,3 +1,5 @@
 \section{Limitations}
 
 The theory does not claim correctness or meaning of execution outcomes. It does not provide any policy or governance logic. It does not address side channels, distributed consensus, or fault tolerance. It does not constrain execution behavior beyond structural ordering and observational separation. Runtime verification approaches are out of scope and are not modeled here \cite{leucker2009brief}.
+
+The model does not attempt to describe distributed concurrency models, partial orders, or causal graphs. The execution stream $V$ is totally ordered by construction. This is an intentional restriction: total order serves as the minimal structural substrate sufficient to define canonical projections, observational non-interference, and replay equivalence. Extensions to partial orders or concurrent event structures would require additional axioms and are left for future work.

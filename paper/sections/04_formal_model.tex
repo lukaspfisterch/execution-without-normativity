@@ -3,7 +3,7 @@
 This section introduces a minimal formal model based on atomic events and an append-only execution stream.
 
 \paragraph{Definition 4.1 (Atomic events).}
-Let $\Delta$ denote the set of atomic execution events. An event is a minimal unit of execution and may carry an observation payload.
+Let $\Delta$ denote the set of atomic execution events. An event is the smallest unit that participates in ordering within the execution stream. Events are the atomic elements of $V$; no sub-event structure is assumed. An event may carry an observation payload.
 
 \paragraph{Definition 4.2 (Execution stream).}
 Let $V = \langle e_0, e_1, \ldots \rangle$ be an append-only stream of events. Each event $e_i \in \Delta$ has a position index $t(e_i) = i$. The ordering defined by $t$ is the only execution order used in the model.
@@ -12,7 +12,7 @@ Let $V = \langle e_0, e_1, \ldots \rangle$ be an append-only stream of events. E
 Let $O$ denote the set of observation artifacts associated with events. Observations are attached to events but are not inputs to deterministic projections.
 
 \paragraph{Definition 4.4 (Authoritative execution inputs).}
-Let $I_{\text{exec}}$ denote the authoritative execution inputs required to identify and order events in $V$ and to evaluate the canonical projection. By definition, $I_{\text{exec}}$ excludes observation artifacts. It may include event identifiers and structural metadata needed to interpret event order, but it does not include outputs, traces, timing data, errors, or metrics.
+Let $I_{\text{exec}}$ denote the minimal structural inputs required to interpret event identity and event order in $V$ and to evaluate the canonical projection. $I_{\text{exec}}$ contains only what is necessary for these two purposes: event identifiers, sequence positions, and any structural metadata required to resolve ordering. It explicitly excludes observation artifacts, including logs, traces, metrics, timing data, and monitoring artifacts. For the purpose of replay, $I_{\text{exec}}$ is fixed: a replay consumes the same $I_{\text{exec}}$ as the original execution.
 
 \paragraph{Definition 4.5 (Canonical projection).}
 A canonical projection is a function $\pi$ that maps an execution stream to a deterministic representation, written $\pi(V; I_{\text{exec}})$. The projection must depend only on the ordered sequence of events and on fixed authoritative execution inputs. Observations are excluded from $\pi$ by definition.
