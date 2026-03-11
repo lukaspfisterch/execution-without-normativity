@@ -1,6 +1,8 @@
 \section{Introduction}
 
-Deterministic execution is often discussed as a property of outcomes. This view conflates execution with meaning and treats observational artifacts as if they were part of the execution structure. Many practical systems mix execution structure with observational artifacts, which complicates deterministic replay. When observational changes are allowed to influence deterministic projections, replay and audit cease to be reliable.
+Deterministic execution is often discussed as a property of outcomes. This view conflates execution with meaning and treats observational artifacts as if they were part of the execution structure. When observational changes are allowed to influence deterministic projections, replay and audit cease to be reliable.
+
+In practice, many systems entangle execution structure with observational artifacts such as logging output, runtime metrics, and distributed traces. This entanglement makes it difficult to determine whether a replay produces the same result because the execution was structurally identical, or because the observations happened to match. Separating these concerns requires an explicit structural distinction.
 
 This paper introduces a minimal axiomatic model that separates execution structure from observation without introducing normativity. The goal is to define what it means for an execution to be deterministic in a structural sense, independent of any domain semantics. The model is intentionally small and focuses on order, replay, and explicit treatment of observations.
 

@@ -9,7 +9,7 @@ Execution is a sequence of atomic events that can be ordered without reference t
 Order is derived from sequence position. Time is not used to define order. Clock time may be recorded as observation but has no role in deterministic projection.
 
 \paragraph{Observation and derivation.}
-Observations are artifacts produced by execution. They are not derivational inputs to deterministic projections. A projection that changes when observations change is not deterministic in the sense of this theory.
+Observations are artifacts produced during or after execution. They are not derivational inputs to deterministic projections; in particular, the canonical projection $\pi$ does not consume observations. A projection that changes when observations change is not deterministic in the sense of this theory.
 
 \paragraph{Structural separation of observations.}
 Observations are artifacts produced during or after execution. They may be attached to events but are structurally separate from the deterministic core: the canonical projection $\pi$ does not consume observations, and changing observations alone cannot alter the projection. This separation is not a filtering step applied after the fact; it is a structural property of the model.
