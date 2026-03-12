@@ -14,28 +14,15 @@ If you are looking for axioms and proofs, continue below.
 
 ---
 
-## A simple way to think about it
+## Conceptual frame
 
-Imagine a machine that just does things **step by step**.
+Execution in this model is purely structural:
+a state exists, an event occurs, and a new state exists.
+No meaning, correctness, or purpose is assumed.
 
-It does not know:
-- whether something is good or bad
-- whether a result is correct or incorrect
-- what the steps *mean*
+The guiding question is:
 
-It only knows:
-- there is a current state
-- a step happens
-- a new state exists
-- then the next step happens
-
-This project describes **that minimal structure**.
-
-No interpretation.  
-No judgment.  
-No purpose.  
-
-Just the pure mechanics of *“this happened, then this happened”*.
+> What is the smallest structure required so that execution can exist at all?
 
 ---
 
@@ -73,9 +60,7 @@ It does **not** attach meaning to execution.
 Governed or policy-bearing architectures may build on this model,
 but such layers are explicitly **out of scope** here.
 
-This repository answers only one question:
-
-> What is the smallest structure required so that execution can exist at all?
+This repository answers only one question, stated above.
 
 The PDF is the **authoritative specification**.  
 This README is descriptive only.
