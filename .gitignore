@@ -22,3 +22,4 @@ INVENTORY.md
 inventory_*.md
 inventory_summary*.json
 tools/refresh_inventory.py
+dist/

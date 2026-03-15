@@ -6,6 +6,7 @@ This document is the practical checklist for submitting `Execution Without Norma
 
 - Primary category: `cs.LO`
 - Submission type: TeX source upload, not PDF-only
+- arXiv accepts a packaged `.tar` or `.zip` archive for TeX submissions
 
 ## Manuscript state
 
@@ -37,6 +38,19 @@ Do not include:
 - `*.fls`
 - `*.fdb_latexmk`
 - other local build artifacts
+
+## Local bundle command
+
+From the repo root:
+
+```bash
+python scripts/build_arxiv_bundle.py
+```
+
+This writes a clean upload archive under `dist/arxiv/`.
+
+The generated `.zip` file is suitable for arXiv upload. A `.tar` archive would
+also be acceptable, but `.zip` is fine.
 
 ## Metadata
 
