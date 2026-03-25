@@ -99,9 +99,6 @@ it is impossible to see where normativity actually enters a system.
 
 *(Warning: formal, axiomatic, and intentionally dense.)*
 
-Submission guidance:
-
-
 ---
 
 ## Build
