@@ -101,7 +101,6 @@ it is impossible to see where normativity actually enters a system.
 
 Submission guidance:
 
-- [`docs/ARXIV_SUBMISSION.md`](docs/ARXIV_SUBMISSION.md)
 
 ---
 
