@@ -2,6 +2,8 @@
 
 This section formalizes the separation between observation and deterministic projection. Let $V$ be an execution stream and let $O$ be the set of observations attached to events. Two executions are observation-equivalent if they have identical ordered event sequences and differ only in observations.
 
+All results in this section and the next follow directly from the axioms and are included only to make the invariant structure explicit.
+
 \paragraph{Definition 6.1 (Observation-equivalence).}
 For execution streams $V$ and $V'$, we write $V \sim_O V'$ if they contain the same ordered sequence of events and differ only in observation artifacts. For fixed $I_{\text{exec}}$, a projection $\pi$ is observation-free if $V \sim_O V'$ implies $\pi(V; I_{\text{exec}}) = \pi(V'; I_{\text{exec}})$. This aligns with classical noninterference formulations in which observations do not influence permitted derivations \cite{goguen1982security,rushby1992noninterference}.
 
@@ -11,7 +13,7 @@ Observational changes cannot extend the authoritative execution input domain use
 \paragraph{Lemma 6.3 (Observation-free projection).}
 Under A4 and A5, the canonical projection $\pi$ is observation-free. Therefore, changing observations does not change deterministic projections for fixed $I_{\text{exec}}$.
 
-\paragraph{Theorem 6.4 (Observational non-interference).}
+\paragraph{Proposition 6.4 (Observational non-interference).}
 For all execution streams $V$ and $V'$ and for fixed $I_{\text{exec}}$, if $V \sim_O V'$, then $\pi(V; I_{\text{exec}}) = \pi(V'; I_{\text{exec}})$.
 
 \paragraph{Proof sketch.}

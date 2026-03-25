@@ -7,8 +7,9 @@ A foundational paper about the most minimal mechanics of execution.
 This repository describes **what it means for something to be executed at all**,
 before questions of meaning, correctness, policy, or governance are introduced.
 
-If you are looking for an architectural overview or motivation, start here:  
-https://github.com/lukaspfisterch/deterministic-boundary-layer
+If you are looking for the companion governance paper built on top of this
+execution substrate, start here:  
+https://github.com/lukaspfisterch/dbl-paper
 
 If you are looking for axioms and proofs, continue below.
 
@@ -51,7 +52,8 @@ by design.
 
 ## Positioning
 
-This paper defines a **minimal execution substrate**.
+This paper defines a **minimal execution substrate** and is best read as a
+foundational reference document for later governance-layer work.
 
 It does **not** decide what should happen.  
 It does **not** evaluate outcomes.  
@@ -59,6 +61,8 @@ It does **not** attach meaning to execution.
 
 Governed or policy-bearing architectures may build on this model,
 but such layers are explicitly **out of scope** here.
+
+The companion `dbl-paper` repository is one such governance-layer extension.
 
 This repository answers only one question, stated above.
 
@@ -94,6 +98,10 @@ it is impossible to see where normativity actually enters a system.
   [paper/main.pdf](paper/main.pdf)
 
 *(Warning: formal, axiomatic, and intentionally dense.)*
+
+Submission guidance:
+
+- [`docs/ARXIV_SUBMISSION.md`](docs/ARXIV_SUBMISSION.md)
 
 ---
 

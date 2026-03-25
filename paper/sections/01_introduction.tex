@@ -8,6 +8,10 @@ This paper introduces a minimal axiomatic model that separates execution structu
 
 This paper presents formal foundations, axioms, and proof sketches of observational non-interference and replay equivalence. The results are purely structural and apply to systems whose execution can be represented as an ordered stream of events.
 
+The contribution of this paper is not the derivation of elaborate behavior from a rich execution semantics. It is the identification of the minimal structural substrate on which any governed system must build if it wants deterministic replay and clean separation between execution and observation. In that sense, this paper is intentionally prior to governance: it isolates the execution conditions that a later governance layer may rely on.
+
+The companion DBL paper is one such governance layer. It introduces additional constraints for authoritative inputs, explicit decisions, and replayable normativity. The present paper remains narrower: it characterizes the execution substrate only and does not reuse the governance axioms or numbering of the companion work.
+
 \paragraph{Companion implementation path.}
 The theory presented here is independent of any particular software artifact. For readers interested in experimentation and implementation, a companion stack exists:
 
