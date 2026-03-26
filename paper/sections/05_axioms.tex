@@ -16,3 +16,27 @@ Observations may be recorded and may vary arbitrarily. The canonical projection 
 
 \paragraph{A5 Structural determinism of projections.}
 For fixed authoritative execution inputs $I_{\text{exec}}$, the canonical projection $\pi(V; I_{\text{exec}})$ is deterministic and invariant under execution replay. Authoritative execution inputs are those required to identify and order events in $V$ and to evaluate $\pi$; observational artifacts are excluded.
+
+\paragraph{Reference Implementation.}
+We provide a minimal reference implementation of the Deterministic Boundary
+Layer (DBL) as a runtime system.\footnote{Implementation available at
+\url{https://github.com/lukaspfisterch/dbl-gateway}.}
+
+The system realizes the event chain
+\textit{INTENT} $\rightarrow$ \textit{DECISION} $\rightarrow$ \textit{PROOF}
+$\rightarrow$ \textit{EXECUTION}. DECISION events are recorded in an
+append-only log prior to execution and constitute the normative layer.
+Execution outputs are treated as non-normative observations and do not affect
+governance decisions.
+
+The implementation is organized to preserve the core invariants of the model:
+(i) append-only event persistence,
+(ii) strict ordering of DECISION before EXECUTION,
+(iii) governance input purity, where decisions depend only on authoritative
+inputs and policy configuration, and
+(iv) deterministic replay of DECISION events under fixed inputs and policy
+configuration.
+
+The reference implementation provides a concrete instantiation of the model.
+Empirical results on replay equivalence and policy variation are reported in
+Section~\ref{sec:evaluation}.

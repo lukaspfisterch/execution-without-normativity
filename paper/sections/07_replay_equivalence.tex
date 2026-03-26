@@ -19,3 +19,21 @@ Let $V$ and $V'$ be two executions with identical ordered event sequences. By A2
 
 \paragraph{Consequence.}
 Replay equivalence defines an execution class that ignores observation and depends only on ordered event structure and fixed authoritative execution inputs $I_{\text{exec}}$.
+
+\subsection{Empirical Validation}
+\label{sec:evaluation}
+
+We evaluated replay equivalence on the reference implementation using a fixed
+event stream of 1000 DECISION events produced under identical authoritative
+inputs and unchanged policy configuration. Using \texttt{dbl\_policy.allow\_all}
+as the baseline policy, all 1000 DECISION events reproduced identical digests
+under replay.
+
+We then re-evaluated the same recorded event stream under a modified policy
+without re-executing any turn. Using the variant policy
+\texttt{bench.strict\_extensions}, 200 of 1000 decisions changed from ALLOW to
+DENY, while 800 remained unchanged.
+
+These results provide empirical support for replay equivalence at the
+governance layer and illustrate that normative outcomes can change under
+policy substitution without requiring re-execution of the observational layer.
