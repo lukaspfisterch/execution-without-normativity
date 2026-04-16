@@ -1,5 +1,7 @@
 # Execution Without Normativity
 
+[![Execution Without Normativity DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19600773.svg)](https://doi.org/10.5281/zenodo.19600773)
+[![DBL DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19600832.svg)](https://doi.org/10.5281/zenodo.19600832)
 [![build-paper](https://github.com/lukaspfisterch/execution-without-normativity/actions/workflows/build-paper.yml/badge.svg)](https://github.com/lukaspfisterch/execution-without-normativity/actions/workflows/build-paper.yml)
 
 A foundational paper about the most minimal mechanics of execution.
